@@ -54,7 +54,7 @@ const userSchema = new mongoose.Schema({
   deals:         { type: Number, default: 0 },
   responseRate:  { type: Number, default: 0 },
   badges:        [{ type: String }],
-  reviews:       [reviewSchema],
+  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "Review" }],
 
   // ── Stats ─────────────────────────────────────────────────
   profileViews:  { type: Number, default: 0 },
